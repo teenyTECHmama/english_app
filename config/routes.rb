@@ -6,6 +6,25 @@ Rails.application.routes.draw do
 
   get "sign_up", to: "registrations#new"
   post "sign_up", to: "registrations#create"
+  delete "logout", to: "sessions#destroy"
+
+  get "sign_in", to: "sessions#new"
+  post "sign_in", to: "sessions#create"
+  
+  get "dashboard", to: "user#show"
+  get "dashboard/games", to: "games#index"
+
+
+  get "countries", to: "countries#index"
+  post "countries", to: "countries#score"
+
+  get "phonics", to: "phonics#index"
+  post "phonics", to: "phonics#score"
+
+
+  get "soccer", to: "soccer#index"
+  post "soccer", to: "soccers#score"
+
 
   root to: "main#index"
   # root "articles#index"
