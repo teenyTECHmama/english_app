@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   get "home", to: "home#index"
   # Defines the root path route ("/") 
 
+
+  get "setting", to: "settings#edit", as: :edit_setting # user already signed in and just udating a user vs creating a new user
+  patch "setting", to: "settings#update"
+
   get "sign_up", to: "registrations#new"
   post "sign_up", to: "registrations#create"
   delete "logout", to: "sessions#destroy"
